@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BackGroundColor</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #background{
+            background-color: black;
+            color: #fff;
+            padding: 1em;
+            font-size: 2rem;
+        }
+
+        #click{
+            padding: 0.5rem 0.7rem;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <p id="background">Background Color : rgb(256, 256, 256)</p>
+    <button id="click">
+        Click Me
+    </button>
+</body>
+
+<script>
+    const body = document.querySelector('body');
+    const click = document.querySelector('#click');
+    const pText = document.querySelector('#background');
+
+    
+    click.addEventListener('click',() => {
+        const ran1 = Math.round(Math.random()*256) ;
+        const ran2 = Math.round(Math.random()*256) ;
+        const ran3 = Math.round(Math.random()*256) ;
+        const color = `rgb(${ran1}, ${ran2}, ${ran3})` ;
+
+        body.style.backgroundColor = color ;
+        pText.innerHTML = `Background Color : ${color}`
+    })
+
+
+
+    
+
+</script>
+</html>
